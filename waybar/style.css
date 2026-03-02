@@ -1,0 +1,41 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "monospace", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333333;
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#workspaces button.focused {
+    background-color: #4c7899;
+    border-bottom: 2px solid #ffffff;
+}
+
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#custom-battery,
+#tray {
+    padding: 0 10px;
+    margin: 0;
+    border-left: 1px solid #444444;
+}
+
+/* If it stays at 0, let's make it stand out so you know it's weird */
+#custom-battery {
+    color: #ffffff;
+}

@@ -1,0 +1,50 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 28,
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "network",
+    "pulseaudio",
+    "custom/battery",
+    "tray",
+  ],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}",
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>",
+  },
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "tooltip-format": "{:%A, %B %d, %Y}",
+  },
+  "cpu": { "format": "CPU {usage}%", "interval": 5 },
+  "memory": { "format": "RAM {percentage}%", "interval": 5 },
+  "network": {
+    "format-wifi": "WIFI {signalStrength}%",
+    "format-ethernet": "ETH",
+    "format-disconnected": "OFF",
+  },
+  "pulseaudio": {
+    "format": "VOL {volume}%",
+    "format-muted": "MUTED",
+    "on-click": "pavucontrol",
+  },
+  "custom/battery": {
+    "exec": "acpi -b | grep -Po '\\d+(?=%)' || echo '0'",
+    "format": "BAT {}%",
+    "interval": 10,
+    "tooltip": false,
+  },
+  "tray": {
+    "icon-size": 15,
+    "spacing": 10,
+  },
+}
