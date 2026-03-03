@@ -23,7 +23,13 @@ window#waybar {
     border-bottom: 2px solid #ffffff;
 }
 
-#clock,
+/* Vertical lines on both sides of the clock */
+#clock {
+    padding: 0 10px;
+    border-left: 1px solid #444444;
+    border-right: 1px solid #444444;
+}
+
 #cpu,
 #memory,
 #network,
@@ -35,7 +41,17 @@ window#waybar {
     border-left: 1px solid #444444;
 }
 
-/* If it stays at 0, let's make it stand out so you know it's weird */
+/* Tooltip appearance */
+tooltip {
+    background: #242424;
+    border: 1px solid #444444;
+}
+
+tooltip label {
+    color: #ffffff;
+    padding: 8px;
+}
+
 #custom-battery {
     color: #ffffff;
 }

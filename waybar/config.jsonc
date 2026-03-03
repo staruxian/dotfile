@@ -18,31 +18,39 @@
     "all-outputs": true,
     "format": "{name}",
   },
+
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>",
   },
+
   "clock": {
     "format": "{:%I:%M %p}",
     "tooltip-format": "{:%A, %B %d, %Y}",
   },
+
   "cpu": { "format": "CPU {usage}%", "interval": 5 },
   "memory": { "format": "RAM {percentage}%", "interval": 5 },
+
   "network": {
     "format-wifi": "WIFI {signalStrength}%",
     "format-ethernet": "ETH",
     "format-disconnected": "OFF",
   },
+
   "pulseaudio": {
     "format": "VOL {volume}%",
     "format-muted": "MUTED",
     "on-click": "pavucontrol",
   },
+
   "custom/battery": {
-    "exec": "acpi -b | grep -Po '\\d+(?=%)' || echo '0'",
+    "exec": "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}' | tr -d '%' ",
     "format": "BAT {}%",
-    "interval": 10,
-    "tooltip": false,
+    "interval": 30,
+    "tooltip": true,
+    "exec-tooltip": "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E 'time to (empty|full)' | awk '{print $4, $5, \"remaining\"}'",
   },
+
   "tray": {
     "icon-size": 15,
     "spacing": 10,
