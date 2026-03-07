@@ -1,57 +1,98 @@
+@define-color background #2E3440;
+@define-color foreground #ECEFF4;
+
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "monospace", sans-serif;
-    font-size: 13px;
+    font-family: CaskaydiaMono Nerd Font;
+    font-size: 16px;
     min-height: 0;
 }
 
-window#waybar {
-    background-color: #1a1a1a;
-    border-bottom: 1px solid #333333;
-    color: #ffffff;
+#waybar {
+    background: transparent;
+    color: @background;
+    margin: 5px 5px;
+}
+
+#workspaces {
+    border-radius: 1rem;
+    margin: 5px;
+    background-color: @background;
+    margin-left: 1rem;
 }
 
 #workspaces button {
-    padding: 0 10px;
-    background-color: transparent;
-    color: #ffffff;
+    color: @foreground;
+    border-radius: 1rem;
+    padding: 0.4rem;
 }
 
-#workspaces button.focused {
-    background-color: #4c7899;
-    border-bottom: 2px solid #ffffff;
+#workspaces button.active {
+    color: @foreground;
+    border-radius: 1rem;
 }
 
-/* Vertical lines on both sides of the clock */
+#custom-music,
+#network,
+#battery,
+#tray,
+#bluetooth,
+#cpu,
+#clock,
+#pulseaudio,
+#custom-brightness {
+    background-color: @background;
+    padding: 0.5rem 1rem;
+    margin: 5px 0;
+}
+
 #clock {
-    padding: 0 10px;
-    border-left: 1px solid #444444;
-    border-right: 1px solid #444444;
+    color: @foreground;
+}
+
+#pulseaudio {
+    color: @foreground;
+    border-radius: 1rem 0px 0px 1rem;
+    margin-left: 1rem;
+}
+
+#custom-music {
+    color: @foreground;
+    border-radius: 1rem;
+}
+
+#bluetooth {
+    border-radius: 1rem 0rem 0rem 1rem;
+    margin-left: 1rem;
+    color: @foreground;
 }
 
 #cpu,
-#memory,
-#network,
-#pulseaudio,
-#custom-battery,
-#tray {
-    padding: 0 10px;
-    margin: 0;
-    border-left: 1px solid #444444;
+#custom-brightness {
+    color: @foreground;
 }
 
-/* Tooltip appearance */
+#network {
+    color: @foreground;
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+#battery {
+    color: @foreground;
+    border-radius: 0rem 1rem 1rem 0rem;
+    margin-right: 1rem;
+}
+
+#tray {
+    border-radius: 1rem;
+}
+
 tooltip {
-    background: #242424;
-    border: 1px solid #444444;
+    background-color: alpha(@background, 0.9);
+    padding: 20px;
+    margin: 0px;
+    border-radius: 1rem;
 }
 
 tooltip label {
-    color: #ffffff;
-    padding: 8px;
-}
-
-#custom-battery {
-    color: #ffffff;
+    color: @foreground;
 }
